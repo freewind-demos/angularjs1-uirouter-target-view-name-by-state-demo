@@ -12,3 +12,8 @@ AngularJS1 "@uirouter" Parent Child State Demo
 npm install
 npm run demo
 ```
+
+Documentation
+-------------
+
+- <https://ui-router.github.io/guide/views>

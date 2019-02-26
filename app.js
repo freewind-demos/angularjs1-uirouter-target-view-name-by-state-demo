@@ -2,22 +2,48 @@ const app = angular.module('app', ['ui.router'])
 
 app.config(($stateProvider, $urlRouterProvider) => {
 
-  $stateProvider.state('parent', {
+  $stateProvider.state('grandparent', {
+    url: '/grandparent',
+    templateUrl: './templates/grandparent.html'
+  });
+
+  $stateProvider.state('grandparent.parent', {
     url: '/parent',
-    templateUrl: './templates/parent.html'
+    views: {
+      head: {
+        templateUrl: './templates/parent-head.html'
+      },
+      body: {
+        templateUrl: './templates/parent-body.html'
+      },
+    }
   });
 
-  $stateProvider.state('parent.child', {
+  $stateProvider.state('grandparent.parent.child', {
     url: '/child',
-    templateUrl: './templates/child.html'
+    views: {
+      head: {
+        templateUrl: './templates/child-head.html'
+      },
+      body: {
+        templateUrl: './templates/child-body.html'
+      },
+    }
   });
 
-  $stateProvider.state('child', {
-    url: '/child',
-    templateUrl: './templates/child.html'
+  $stateProvider.state('grandparent.parent.naughtyChild', {
+    url: '/naughty-child',
+    views: {
+      'head@grandparent': {
+        templateUrl: './templates/child-head.html'
+      },
+      body: {
+        templateUrl: './templates/child-body.html'
+      },
+    }
   });
 
-  $urlRouterProvider.otherwise('/parent');
+  $urlRouterProvider.otherwise('/grandparent');
 
 });
 

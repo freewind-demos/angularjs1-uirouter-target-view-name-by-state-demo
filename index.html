@@ -12,11 +12,12 @@
 </head>
 <body ng-app="app">
 <div>
-    <div>
-        Choose:
-        <a ui-sref="pa" ui-sref-active="active">Page A</a>
-        <a ui-sref="pb" ui-sref-active="active">Page B</a>
-    </div>
+    Choose:
+    <ul>
+        <li><a ui-sref="parent" ui-sref-active="active">Parent (state: parent)</a></li>
+        <li><a ui-sref="parent.child" ui-sref-active="active">Child (state: parent.child)</a></li>
+        <li><a ui-sref="child" ui-sref-active="active">Not Real Child (state: child)</a></li>
+    </ul>
     <ui-view></ui-view>
 </div>
 </body>

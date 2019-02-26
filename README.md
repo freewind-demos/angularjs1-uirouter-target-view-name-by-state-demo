@@ -1,14 +1,14 @@
-AngularJS1 "@uirouter" Demo
-===========================
+AngularJS1 "@uirouter" Parent Child State Demo
+==============================================
 
-Use [@uirouter](https://ui-router.github.io/) to handle routes.
+当一个state的名字形如`a.b`的时候，它是state `a`的子state.
+
+当渲染`a.b`这个子state时，它会先渲染`a`这个父state，然后在`a`的template中包括的`<ui-view>`中，
+再继续渲染`a.b`对应的template。
+
+如果state `a`中的template中没有`<ui-view>`，那么`a.b`对应的template将无处渲染。
 
 ```
 npm install
 npm run demo
 ```
-
-可以访问下列url直接看到不同的页面状态：
-
-- <http://127.0.0.1:8081/#!/page-a>
-- <http://127.0.0.1:8081/#!/page-b>

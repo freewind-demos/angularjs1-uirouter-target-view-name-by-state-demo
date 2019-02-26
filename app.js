@@ -2,19 +2,22 @@ const app = angular.module('app', ['ui.router'])
 
 app.config(($stateProvider, $urlRouterProvider) => {
 
-  $stateProvider.state({
-    name: 'pa',
-    url: '/page-a',
-    templateUrl: './templates/a.html'
+  $stateProvider.state('parent', {
+    url: '/parent',
+    templateUrl: './templates/parent.html'
   });
 
-  $stateProvider.state({
-    name: 'pb',
-    url: '/page-b',
-    templateUrl: './templates/b.html'
+  $stateProvider.state('parent.child', {
+    url: '/child',
+    templateUrl: './templates/child.html'
   });
 
-  $urlRouterProvider.otherwise('/page-a');
+  $stateProvider.state('child', {
+    url: '/child',
+    templateUrl: './templates/child.html'
+  });
+
+  $urlRouterProvider.otherwise('/parent');
 
 });
 

@@ -7,7 +7,7 @@ AngularJS1 "@uirouter" Target View Name by State Demo
 
 ```
 npm install
-npm run demo
+npm start
 ```
 
 Documentation
